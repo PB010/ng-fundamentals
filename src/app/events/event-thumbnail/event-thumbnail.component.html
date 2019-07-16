@@ -3,7 +3,7 @@
   <div>Date: {{eventThumbnail.date}}</div>
   <div>Time: {{eventThumbnail.time}}</div>
   <div>Price: {{eventThumbnail.price | currency : 'USD' : 'symbol'}}</div>
-  <div *ngIf="eventThumbnail?.location">
+  <div [hidden]="!eventThumbnail.location">
     <span>Location: {{eventThumbnail.location.address}}</span>
     <span class="pad-left">
       {{eventThumbnail.location.city}}, {{eventThumbnail.location.country}}
